@@ -1,0 +1,52 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Основная страница{% endblock %}
+
+{% block content %}
+
+<!-- Начало переменной части -->
+<div class="cetral-part">
+    <!-- Картинка "Смотреть коллекци." -->
+    <img class="main_img" src="{% static 'media/132_resized 1.png'%}" alt="liva">
+    <a class="red_btn" href="#">Смотреть коллекцию</a>
+    <div class="middle_text_pos">
+        <h3>НОВЫЕ ТОВАРЫ</h3>
+        <a class="look_all_param" href="#">Смотреть все</a>
+    </div>
+
+    <!-- Три картинки -->
+    <goods class="main_offers">
+        <div class="left_offer">
+            <a href=""><img class="main_img" src="{% static 'media/1_resized 1.png'%}" alt="liva"></a>
+            <a href=""><p class="offers-font">Футболка паттерн черная<br>5 600₽</p></a>
+        </div>
+        <sec_good class="central_offer">
+            <a href=""><img class="main_img" src="{% static 'media/7_resized 1.png'%}" alt="liva"></a>
+            <a href=""><p class="offers-font">Футболка паттерн черная<br>5 600₽</p></a>
+        </sec_good>
+        <third_good class="right_offer">
+            <a href=""><img class="main_img" src="{% static 'media/13_resized 1.png'%}" alt="liva"></a>
+            <a href=""><p class="offers-font">Футболка паттерн серая<br>5 600₽</p></a>
+        </third_good>
+    </goods>
+
+    <!-- Две картинки -->
+    <div class="sec_offer">
+        <first>
+            <a href="#"><img class="main_img" src="{% static 'media/168_resized 1.png'%}" alt="liva"></a>
+            <a href="#"><p class="sec_offers_text">ФУТБОЛКИ</p></a>
+        </first>
+        <second>
+            <a href="#"><img class="main_img" src="{% static 'media/154_resized 1.png'%}" alt="liva"></a>
+            <a href="#"><p style="color: #292522" class="sec_offers_text">ЗОНТЫ</p></a>
+        </second>
+    </div>
+</div>
+</div>
+</section>
+<!-- Конец переменной части -->
+
+{% endblock %}
+
+

@@ -1,0 +1,97 @@
+﻿
+/* Переменная часть */
+
+/* Центральная картинка */
+
+.cetral-part{
+    grid-column: 4/13;
+}
+
+.red_btn{
+    position: relative;
+    z-index: 200;
+    top: -5vw;
+    left: 25vw;
+    color: white;
+    background-color: #ec3621;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 0.8vw 4.6vw 0.8vw 4.6vw;
+}
+
+.middle_text_pos{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.look_all_param{
+    font-family: "TRY Grtsk Exa";
+    text-decoration: underline;
+    color: #292522;
+}
+
+
+/* Три картинки, начало */
+.main_offers{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1);
+    grid-column-gap: 20px;
+}
+
+.left_offer{
+    grid-column: 1/5;
+}
+
+.central_offer{
+    grid-column: 5/9;
+}
+
+.right_offer{
+    grid-column: 9/13;
+}
+
+.offers-font{
+    font-family: "TRY Grtsk Exa";
+    margin-top: 10px;
+    line-height: 1.5;
+}
+/* Три картинки, конец */
+
+/* Две картинки, начало */
+
+.sec_offer{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 21px;
+}
+
+.sec_offers_text{
+    position: relative;
+    z-index: 200;
+    bottom: 45px;
+    text-align: center;
+    color: #fff;    
+}
+
+/* Две картинки, конец */
+
+
+
+
+@media (max-width: 768px) {
+    .central-cont{
+        display:block;
+    }
+
+    .red_btn{
+        font-size: calc(33vw / (768 / 36));
+        top: -7vw;
+        left: 31vw;
+        padding: 1vw 7vw 1vw 7vw;
+    }
+
+}

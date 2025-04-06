@@ -1,0 +1,351 @@
+﻿@font-face {
+    font-family: "TRY Grtsk";
+    src: url(./fonts/TRYGrtsk-SemiBoldTera-BF6426555e75744.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "TRY Grtsk Exa";
+    src: url(./fonts/TRYGrtsk-Exa-BF642655366dc3e.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+html {
+    font-family: "TRY Grtsk";
+    margin: 0 auto;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #292522;
+}
+
+/* header */
+.body {
+    position: relative;
+    height: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;  
+}
+
+.header-nav-menu {
+    display: flex;
+    gap: 20px;
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+.nav_font_color {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.burger-but {
+    display: none;
+}
+
+/* central part */
+
+.central-cont{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1);
+    margin-left: 15px;
+    margin-right: 15px;    
+}
+
+.left-bar{
+    grid-column: 1/4;
+}
+
+.loc_in_column{
+    display: flex;
+    flex-flow: column wrap; 
+}
+
+.show-hide-for-home,
+.show-hide-accessories,
+.show-hide-decorations,
+.show-hide-cloth,
+.show-hide-mans-cloth,
+.show-hide-womans-cloth,
+.show-hide-collections {
+    display: none;
+}
+
+.chek-pointer{
+    font-size: 13px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#for-home-chkbx:checked ~ .show-hide-for-home,
+#accessories-chkbx:checked ~ .show-hide-accessories,
+#decorations-chkbx:checked ~ .show-hide-decorations,
+#cloth-chkbx:checked ~ .show-hide-cloth,
+#mans-cloth-chkbx:checked ~ .show-hide-mans-cloth,
+#womans-cloth-chkbx:checked ~ .show-hide-womans-cloth,
+#collections-chkbx:checked ~ .show-hide-collections {
+    display: flex;
+}
+
+.chk-bx-hide{
+    position: absolute;
+    visibility: hidden;
+}
+
+.sub_menu_param{
+    font-family: "TRY Grtsk Exa";
+    line-height: 156%;    
+    margin-left: 15px;
+}
+
+.main_sub_menu_param{
+    /* font-family: "TRY Grtsk Exa"; */
+    line-height: 156%;    
+    margin-left: 8px;
+    font-size: 13px;
+}
+
+/* footer */
+.footer_grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 0.7fr;
+    background: #f5f4f2;
+    grid-column-gap: 9px;  
+}
+
+.first_row{
+    padding-top: 30px;
+    grid-column: 1/5;
+    grid-row: 1/2;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 30px;
+}
+
+.sec_row_first_col{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    margin-left: 12px;
+    line-height: 187%;
+    color: #292522;
+    text-decoration: none;
+
+}
+
+.sec_row_sec_col{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    line-height: 187%;
+    color: #292522;
+    text-decoration: none;
+}
+
+.sec_row_third_col{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    line-height: 187%;
+    color: #292522;
+    text-decoration: none;
+}
+
+.sec_row_fourth_col{
+    grid-row: 2/3;
+    grid-column: 4/5;
+    margin-right: 12px;
+    justify-content: space-between
+}
+
+.footer_params{
+    font-family: "TRY Grtsk Exa";
+    background: #f5f4f2;
+    margin-top: 40px;
+    
+}
+
+.black_bottom{
+    font-family: "TRY Grtsk";
+    width: 333px;
+    background: #292522;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.last_row{
+    grid-row: 3/4;
+}
+
+.last_row_left_part{
+    grid-row: 3/4;
+    grid-column: 1/3;
+    margin-left: 12px;
+    margin-top: 40px;
+
+}
+
+.last_row_right_part{
+    grid-row: 3/4;
+    grid-column: 3/5;
+    text-align: right;
+    margin-right: 12px;
+    margin-top: 40px;
+}
+
+.main_img{
+    position: relative;
+    z-index: 100;
+    width: 100%;
+}
+
+.border{
+    border: 10px solid red
+}
+
+
+@media (max-width: 768px) {
+    /* burger-button */
+    .header-nav-menu {
+        display: none;
+    }
+
+    .burger-but {
+        display: flex;
+        justify-content: end;
+    }
+
+    .burger-checkbox {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .burger {
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        border: none;
+        background: transparent;
+        width: 40px;
+        height: 26px;
+        margin-top: 15px;
+        margin-bottom: 15px
+    }
+
+    .burger::before,
+    .burger::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 10px;
+        background: #000;
+    }
+
+    .burger::before {
+        top: 0;
+        box-shadow: 0 11px 0 #000;
+    }
+
+    .burger::after {
+        bottom: 0;
+    }
+
+    .burger-checkbox:checked+.burger::before {
+        top: 11px;
+        transform: rotate(45deg);
+        box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+    }
+
+    .burger-checkbox:checked+.burger::after {
+        bottom: 11px;
+        transform: rotate(-45deg);
+    }
+
+    .menu-list {
+        top: 0;
+        right: 0px;
+        position: absolute;
+        display: grid;
+        padding-top: 70px;
+        margin: 0;
+        background: rgba(160, 160, 160, 0.1);
+        list-style-type: none;
+        visibility: hidden;
+    }
+
+    
+    .nav_font_color {
+        display: block;
+        text-align: center;
+        margin-bottom: 0;
+        padding-block: 15px;
+    }
+
+    .menu-item {
+        display: block;
+        padding: 8px;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .nav_font_color:hover {
+        background: rgba(160, 160, 160, 0.3)
+    }
+
+    .burger-checkbox:checked~.menu-list {
+        visibility:visible;
+        transition: .3s;
+    }
+
+    .footer_grid{
+        grid-template-rows: 1fr 1fr 1fr 0.7fr;
+    }
+    
+    .sec_row_first_col{
+        grid-column: 1/3;
+    }
+    
+    .sec_row_sec_col{
+        grid-column: 3/5;
+    }
+
+    .sec_row_third_col{
+        margin-top: 12px;
+        margin-left: 12px;
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+    
+    .sec_row_fourth_col{
+        margin-top: 12px;
+        grid-row: 3/4;
+        grid-column: 2/5;
+    }
+
+    .last_row_left_part{
+        grid-row: 4/5; 
+    }
+    
+    .last_row_right_part{
+        grid-row: 4/5;
+    }
+}

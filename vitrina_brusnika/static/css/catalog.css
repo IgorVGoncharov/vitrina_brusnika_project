@@ -1,0 +1,37 @@
+﻿.main_offer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.cetral-part{
+    grid-column: 4/13;
+}
+
+.label{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.offers-font{
+    font-family: "TRY Grtsk Exa";
+    margin-top: 10px;
+    line-height: 1.5;
+
+}
+
+.is-sale{
+    text-decoration: line-through;
+}
+
+.sales{
+    color: red;
+    text-decoration: none;
+}
+
+@media (max-width: 768px){
+    .main_offer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
