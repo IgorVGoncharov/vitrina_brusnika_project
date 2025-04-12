@@ -1,4 +1,5 @@
 ﻿{% load static %}
+{% load goods_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main_page.css'%}">
+    
     <title>{% block title %}Базовый шаблон{% endblock %}</title>
 </head>
 <body class="body">
@@ -34,69 +36,22 @@
     </header>
     <section>
         <div class="central-cont">
+            {% comment %} Left bar {% endcomment %}
             <div class="left-bar">
                 <div style="margin-top: 60px" class="loc_in_column">
-                    <input id="collections-chkbx" type="checkbox" class="chk-bx-hide">
-                    <label for="collections-chkbx" class="chek-pointer">КОЛЛЕКЦИИ</label>
-                    <sub_menu class="loc_in_column show-hide-collections">
-                        <a class="sub_menu_param" href="#">весна-лето</a>
-                        <a style="margin-bottom: 21px" class="sub_menu_param" href="#">осень-зима</a>
-                    </sub_menu>
-
-                    <input id="cloth-chkbx" type="checkbox" class="chk-bx-hide">
-                    <label for="cloth-chkbx" class="chek-pointer">ОДЕЖДА</label>
-                    <sub_menu class="loc_in_column show-hide-cloth">
-                        {% comment %} <input style="margin-bottom: 21px" id="mans-cloth-chkbx" type="checkbox" class="chk-bx-hide">
-                        <label for="mans-cloth-chkbx" class="chek-pointer main_sub_menu_param">Мужская</label>
-                        <sub_menu class="loc_in_column show-hide-mans-cloth"> {% endcomment %}
-                            <a class="sub_menu_param" href="#">Куртки</a>
-                            <a class="sub_menu_param" href="#">Рубашки</a>
-                            <a class="sub_menu_param" href="#">Джинсы</a>
-                            <a class="sub_menu_param" href="./catalog.html">Футболки</a>
-                            <a class="sub_menu_param" href="#">Шорты</a>
-                            <a class="sub_menu_param" href="#">Брюки</a>
-                        {% comment %} </sub_menu>
-                        <input style="margin-bottom: 21px" id="womans-cloth-chkbx" type="checkbox" class="chk-bx-hide">
-                        <label for="womans-cloth-chkbx" class="chek-pointer main_sub_menu_param">Женская</label>
-                        <sub_menu class="loc_in_column show-hide-womans-cloth"> {% endcomment %}
-                            <a class="sub_menu_param" href="#">Джемперы и кардиганы</a>
-                            <a class="sub_menu_param" href="#">Толстовки</a>
-                            <a class="sub_menu_param" href="#">Футболки и топы</a>
-                            <a class="sub_menu_param" href="#">Блузки и рубашки</a>
-                            <a class="sub_menu_param" href="#">Платья</a>
-                            <a style="margin-bottom: 21px" class="sub_menu_param" href="#">Юбки</a>
-                        </sub_menu>
-                    </sub_menu>
-                    <input id="decorations-chkbx" type="checkbox" class="chk-bx-hide">
-                    <label for="decorations-chkbx" class="chek-pointer">УКРАШЕНИЯ</label>
-                    <sub_menu class="loc_in_column show-hide-decorations">
-                        <a class="sub_menu_param" href="#">Браслеты</a>
-                        <a class="sub_menu_param" href="#">Колье</a>
-                        <a class="sub_menu_param" href="#">Кольца</a>
-                        <a style="margin-bottom: 21px" class="sub_menu_param" href="#">Серьги</a>
-                    </sub_menu>
-
-                    <input id="accessories-chkbx" type="checkbox" class="chk-bx-hide">
-                    <label for="accessories-chkbx" class="chek-pointer">АКСЕССУАРЫ</label>
-                    <sub_menu class="loc_in_column show-hide-accessories">
-                        <a class="sub_menu_param" href="#">Головные уборы</a>
-                        <a class="sub_menu_param" href="#">Шарфы</a>
-                        <a class="sub_menu_param" href="#">Перчатки и варежки</a>
-                        <a class="sub_menu_param" href="#">Ремни</a>
-                        <a class="sub_menu_param" href="#">Колготки и носки</a>
-                        <a style="margin-bottom: 21px" class="sub_menu_param" href="#">Нижнее белье</a>
-                    </sub_menu>
-                    <input id="for-home-chkbx" type="checkbox" class="chk-bx-hide">
-                    <label for="for-home-chkbx" class="chek-pointer">ДЛЯ ДОМА И ОФИСА</label>
-                    <sub_menu class="loc_in_column show-hide-for-home">
-                        <a class="sub_menu_param" href="#">Смотреть все</a>
-                        <a class="sub_menu_param" href="#">Плакаты</a>
-                        <a class="sub_menu_param" href="#">Блокноты</a>
-                        <a class="sub_menu_param" href="#">Стикерпаки</a>
-                        <a class="sub_menu_param" href="#">Чехлы для ноутбуков</a>
-                        <a style="margin-bottom: 21px" class="sub_menu_param" href="#">Конструкторы</a>
-                    </sub_menu>
-                    <a class="chek-pointer" href="#">ПОДАРОЧНЫЙ СЕРТИФИКАТ</a>
+                        {% tag_chapter as chapters %}
+                        {% for chapter in chapters %}
+                            <div class="category chek-pointer" data-target="products-{{ chapter.slug }}">
+                                {{ chapter.name }}</div>
+                            <div class="product-list loc_in_column" id="products-{{ chapter.slug }}">
+                                {% tag_categories chapter.name as categories%}
+                                {% for category in categories %}
+                                    <ul class="sub_menu_param">
+                                        <li><a href="#">{{ category.name }}</a></li>
+                                    </ul>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}     
                 </div>
             </div>
 
@@ -134,5 +89,6 @@
         <p class="last_row_left_part">2024 © Витрина Брусника</p>
         <p class="last_row_right_part">Создание сайта — Elpycode</p>
     </footer>
+    <script type="text/javascript" src={% static "js/scripts.js" %}></script>
 </body>
 </html>

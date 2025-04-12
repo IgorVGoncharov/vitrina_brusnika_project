@@ -15,7 +15,7 @@
 html {
     font-family: "TRY Grtsk";
     margin: 0 auto;
-    
+    padding: 0;
 }
 
 a {
@@ -72,13 +72,13 @@ a {
     flex-flow: column wrap; 
 }
 
-.show-hide-for-home,
-.show-hide-accessories,
-.show-hide-decorations,
-.show-hide-cloth,
-.show-hide-mans-cloth,
-.show-hide-womans-cloth,
-.show-hide-collections {
+.show-hide-dlya-doma-i-ofisa,
+.show-hide-aksessuary,
+.show-hide-ukrasheniya,
+/* .show-hide-cloth, */
+/* .show-hide-mans-cloth, */
+.show-hide-odezhda,
+.show-hide-kollekcii {
     display: none;
 }
 
@@ -88,13 +88,13 @@ a {
     cursor: pointer;
 }
 
-#for-home-chkbx:checked ~ .show-hide-for-home,
-#accessories-chkbx:checked ~ .show-hide-accessories,
-#decorations-chkbx:checked ~ .show-hide-decorations,
-#cloth-chkbx:checked ~ .show-hide-cloth,
-#mans-cloth-chkbx:checked ~ .show-hide-mans-cloth,
-#womans-cloth-chkbx:checked ~ .show-hide-womans-cloth,
-#collections-chkbx:checked ~ .show-hide-collections {
+#dlya-doma-i-ofisa-chkbx:checked ~ .show-hide-dlya-doma-i-ofisa,
+#aksessuary-chkbx:checked ~ .show-hide-aksessuary,
+#ukrasheniya-chkbx:checked ~ .show-hide-ukrasheniya,
+/* #cloth-chkbx:checked ~ .show-hide-cloth, */
+/* #mans-cloth-chkbx:checked ~ .show-hide-mans-cloth, */
+#odezhda-chkbx:checked ~ .show-hide-odezhda,
+#kollekcii-chkbx:checked ~ .show-hide-kollekcii {
     display: flex;
 }
 
@@ -349,3 +349,16 @@ a {
         grid-row: 4/5;
     }
 }
+
+
+.product-list {
+    display: none;
+}
+.product-list.active {
+    display: block; 
+    margin-bottom: 15px;
+}
+.category {
+    cursor: pointer;
+}
+
