@@ -67,6 +67,10 @@ a {
     grid-column: 1/4;
 }
 
+.cetral-part{
+    grid-column: 4/13;
+}
+
 .loc_in_column{
     display: flex;
     flex-flow: column wrap; 

@@ -62,20 +62,7 @@
 
 /* Две картинки, начало */
 
-.sec_offer{
-    padding-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 21px;
-}
 
-.sec_offers_text{
-    position: relative;
-    z-index: 200;
-    bottom: 45px;
-    text-align: center;
-    color: #fff;    
-}
 
 /* Две картинки, конец */
 

@@ -1,7 +1,9 @@
 ﻿{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Основная страница{% endblock %}
+
+{% block css %}{% static 'css/catalog.css'%}{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block content %}
 
@@ -16,31 +18,24 @@
     </div>
 
     <!-- Три картинки -->
-    <goods class="main_offers">
-        <div class="left_offer">
-            <a href=""><img class="main_img" src="{% static 'media/1_resized 1.png'%}" alt="liva"></a>
-            <a href=""><p class="offers-font">Футболка паттерн черная<br>5 600₽</p></a>
+    <goods class="main_offer">
+        {% for product in new_goods %}
+        <div class="">
+            <a href=""><img class="main_img" src="{{ product.image.url }}" alt={{ product.name }}></a>
+            <a href=""><p class="offers-font">{{ product.name }}<br>{{ product.price }}₽</p></a>
         </div>
-        <sec_good class="central_offer">
-            <a href=""><img class="main_img" src="{% static 'media/7_resized 1.png'%}" alt="liva"></a>
-            <a href=""><p class="offers-font">Футболка паттерн черная<br>5 600₽</p></a>
-        </sec_good>
-        <third_good class="right_offer">
-            <a href=""><img class="main_img" src="{% static 'media/13_resized 1.png'%}" alt="liva"></a>
-            <a href=""><p class="offers-font">Футболка паттерн серая<br>5 600₽</p></a>
-        </third_good>
+        {% endfor%}
     </goods>
 
     <!-- Две картинки -->
     <div class="sec_offer">
-        <first>
-            <a href="#"><img class="main_img" src="{% static 'media/168_resized 1.png'%}" alt="liva"></a>
-            <a href="#"><p class="sec_offers_text">ФУТБОЛКИ</p></a>
-        </first>
-        <second>
-            <a href="#"><img class="main_img" src="{% static 'media/154_resized 1.png'%}" alt="liva"></a>
-            <a href="#"><p style="color: #292522" class="sec_offers_text">ЗОНТЫ</p></a>
-        </second>
+        {% for category in categories %}
+            <div>
+                <a href="#"><img class="main_img" src="{{ category.image.url }}" alt={{ category.name }}></a>
+                <a href="#"><p class="sec_offers_text">{{ category.name }}</p></a>
+            </div>
+        {% endfor%} 
+
     </div>
 </div>
 </div>

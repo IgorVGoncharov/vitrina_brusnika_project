@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main_page.css'%}">
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_page.css'%}"> 
+    <link rel="stylesheet" type="text/css" href="{% block css %}{% endblock %}"> 
     <title>{% block title %}Базовый шаблон{% endblock %}</title>
 </head>
 <body class="body">
@@ -54,15 +54,15 @@
                         {% endfor %}     
                 </div>
             </div>
-
+        {% comment %} Контент {% endcomment %}
         {% block content %}
-
             <div class="cetral-part"></div>
         </div>
     </section>
     
         {% endblock %}
 
+        {% comment %} Footer {% endcomment %}
     <footer class="footer_grid footer_params">
         <main_label class="first_row">    
                 <img class="main_img" src="{% static 'media/ВИТРИНА.БРУСНИКА.png'%}" alt="liva">

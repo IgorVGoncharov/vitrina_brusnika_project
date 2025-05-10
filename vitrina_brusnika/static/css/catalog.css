@@ -5,9 +5,6 @@
     grid-row-gap: 20px;
 }
 
-.cetral-part{
-    grid-column: 4/13;
-}
 
 .label{
     margin-bottom: 20px;
@@ -18,7 +15,6 @@
     font-family: "TRY Grtsk Exa";
     margin-top: 10px;
     line-height: 1.5;
-
 }
 
 .is-sale{
@@ -34,4 +30,19 @@
     .main_offer{
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+.sec_offer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 20px;
+    grid-column-gap: 21px;
+}
+
+.sec_offers_text{
+    position: relative;
+    z-index: 200;
+    bottom: 45px;
+    text-align: center;
+    color: #fff;    
 }
