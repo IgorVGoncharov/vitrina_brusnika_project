@@ -1,0 +1,78 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}{% static 'css/product.css'%}{% endblock %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<!-- Начало переменной части -->
+<div class="cetral-part">
+    <h1 class="header_discr">{{ product.category.chapter }} / {{ product.category.name }}</h1>
+    <div class="product_grid">
+        <div class="left_grid">
+            <img class="image_param" src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+        <div class="right_grid">
+            <p class="product_name">{{ product.name }}</p>
+            {% if product.discount %}
+                <p class="disc_price"> {{product.price}}₽    <span class="sell_price">{{ product.sell_price }}₽</span></p>
+            {% else %}
+                <p class="price">{{product.price}}₽</p>
+            {% endif %}
+            <div class="sizes">
+                <p>Размер:</p>
+                <p class="table_size">Таблица размеров</p>
+            </div>
+            <div class="size">
+                {% if product.xs_count %}
+                    <a class="clickable first_size сlick_size" href="">XS</a>
+                {% else %}
+                    <p class="empty_good first_size">XS</p>
+                {% endif %}
+                {% if product.s_count %}
+                    <a class="clickable sec_size сlick_size" href="">S</a>
+                {% else %}
+                    <p class="empty_good sec_size">S</p>
+                {% endif %}
+                {% if product.m_count %}
+                    <a class="clickable sec_size сlick_size" href="">M</a>
+                {% else %}
+                    <p class="empty_good sec_size">M</p>
+                {% endif %}
+                {% if product.l_count %}
+                    <a class="clickable sec_size сlick_size" href="">L</a>
+                {% else %}
+                    <p class="empty_good sec_size">L</p>
+                {% endif %}
+                {% if product.xl_count %}
+                    <a class="clickable first_size сlick_size" href="">XL</a>
+                {% else %}
+                    <p class="empty_good first_size">XL</p>
+                {% endif %}
+            </div>
+            <div class="description_chapter">
+                <a class="add-bottom" href="#">Добавить в корзину</a> <!-- Еще нужно доработать!!!!! -->
+                <p class="description_header">Описание</p>
+                <p class="description">{{ product.description }}</p>
+                <div class="details">
+                    <a href="">Состав и детали</a> <!-- Еще нужно доработать!!!!! -->
+                    <a href=""><img src="{% static 'media/other_images/Vector 84.svg'%}" alt=""></a>
+                </div>
+                <p class="line_between"></p>
+                <div class="details">
+                    <a href="">Доставка и оплата</a> <!-- Еще нужно доработать!!!!! -->
+                    <a href=""><img src="{% static 'media/other_images/Vector 84.svg'%}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- Конец переменной части -->
+
+{% endblock %}
+
+

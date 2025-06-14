@@ -1,4 +1,6 @@
-﻿.main_offer{
+﻿
+
+.main_offer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 20px;
@@ -46,3 +48,5 @@
     text-align: center;
     color: #fff;    
 }
+
+

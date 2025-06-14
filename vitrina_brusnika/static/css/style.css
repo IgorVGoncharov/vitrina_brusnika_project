@@ -1,8 +1,6 @@
 ﻿@font-face {
     font-family: "TRY Grtsk";
     src: url(./fonts/TRYGrtsk-SemiBoldTera-BF6426555e75744.ttf);
-    font-style: normal;
-    font-weight: normal;
 }
 
 @font-face {
@@ -10,6 +8,11 @@
     src: url(./fonts/TRYGrtsk-Exa-BF642655366dc3e.ttf);
     font-style: normal;
     font-weight: normal;
+}
+
+.discount{
+    color: red;
+    text-decoration: line-through;
 }
 
 html {

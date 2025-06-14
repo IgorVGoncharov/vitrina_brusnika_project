@@ -1,0 +1,137 @@
+﻿.product_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+
+}
+
+.header_discr{
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.left_grid{
+    grid-column: 1/3;
+}
+
+.right_grid{
+    grid-column: 3/4;
+}
+
+.image_param{
+    width: 100%;
+}
+
+.product_name{
+    text-transform: uppercase;
+}
+
+.disc_price{
+    padding-top: 15px;
+    color: red;
+}
+
+.price{
+    padding-top: 15px;
+}
+
+.sell_price{
+    color: #6D6D6D;
+    padding-left: 15px;
+    text-decoration: line-through;
+}
+
+.sizes{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: "TRY Grtsk Exa";
+    font-weight: 400;
+}
+
+.table_size{
+    text-decoration: underline;
+}
+
+.size{
+    font-size: 16px;
+    font-family: "TRY Grtsk Exa";
+    font-weight: 600;
+    display: flex;
+    column-gap: 10px;
+}
+
+.first_size{
+    padding: 10px 15px 10px 15px;
+}
+
+.sec_size{
+    padding: 10px 20px 10px 20px;
+}
+
+.description_chapter{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-bottom{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a.clickable{
+    border: 2px solid;
+    border-color: black;
+}
+
+a.clickable.active {
+    border-color: red;
+}
+
+.description_header{
+    font-size: 18px;
+    font-family: "TRY Grtsk Exa";
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 25px;
+}
+
+.description{
+    font-size: 16px;
+    font-family: "TRY Grtsk Exa";
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 22px;
+}
+
+.details{
+    display:flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-family: "TRY Grtsk Exa";
+    font-weight: 400;
+    margin-top: 10px;
+    
+}
+
+.line_between{
+    border-top: 2px groove;
+    color: green;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.empty_good{
+    color: rgb(148, 148, 148);
+    border: 2px solid;
+}
+

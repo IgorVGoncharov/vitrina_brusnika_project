@@ -1,0 +1,23 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}{% static 'css/catalog.css'%}{% endblock %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<!-- Начало переменной части -->
+<div class="cetral-part">
+    {% for product in products %}
+    <a><img  src="{{ product.image.url }}" alt="logo"></a>
+    {% endfor %}
+    
+</div>
+</div>
+</section>
+<!-- Конец переменной части -->
+
+{% endblock %}
+
+

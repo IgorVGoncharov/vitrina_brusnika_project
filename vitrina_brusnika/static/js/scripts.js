@@ -14,3 +14,13 @@
         }
     });
 });
+
+document.querySelectorAll('a.clickable').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        document.querySelectorAll('a.clickable').forEach(el => {
+            el.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});

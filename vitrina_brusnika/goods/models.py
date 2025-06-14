@@ -36,9 +36,15 @@ class Goods(models.Model):
     image = models.ImageField(upload_to='goods_images', blank=True, null=True, verbose_name='Изображение')
     price = models.DecimalField(default=0.00, max_digits=7, decimal_places=2, verbose_name='Цена')
     discount = models.DecimalField(default=0.00, max_digits=7, decimal_places=2, verbose_name='Скидка в %')
-    quantity = models.PositiveIntegerField(default=0, verbose_name='Количество')
     choice = models.CharField(max_length=50, choices=Сhoice_CHOICES ,default="Нет", verbose_name='Новые товары')
-    vategory = models.ForeignKey(to=Categories, on_delete=models.CASCADE, verbose_name='Категория')
+    category = models.ForeignKey(to=Categories, on_delete=models.CASCADE, verbose_name='Категория')
+    xs_count = models.PositiveIntegerField(default=0, verbose_name='Количество размера XS')
+    s_count = models.PositiveIntegerField(default=0, verbose_name='Количество размера S')
+    m_count = models.PositiveIntegerField(default=0, verbose_name='Количество размера M')
+    l_count = models.PositiveIntegerField(default=0, verbose_name='Количество размера L')
+    xl_count = models.PositiveIntegerField(default=0, verbose_name='Количество размера XL')
+    
+    
 
     class Meta:
         verbose_name='Товар'
@@ -46,3 +52,11 @@ class Goods(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def display_id(self):
+        return f'{self.id:05}'
+    
+    def sell_price(self):
+        if self.discount:
+            return round(self.price - (self.price*self.discount/100), 2)
+        return self.price

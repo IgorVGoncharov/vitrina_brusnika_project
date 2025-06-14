@@ -11,18 +11,23 @@
 <div class="cetral-part">
     <!-- Картинка "Смотреть коллекци." -->
     <img class="main_img" src="{% static 'media/132_resized 1.png'%}" alt="liva">
-    <a class="red_btn" href="#">Смотреть коллекцию</a>
+    <a class="red_btn" href="">Смотреть коллекцию</a>
     <div class="middle_text_pos">
         <h3>НОВЫЕ ТОВАРЫ</h3>
-        <a class="look_all_param" href="#">Смотреть все</a>
+        <a class="look_all_param" href="{% url 'goods:products' %}">Смотреть все</a>
     </div>
 
     <!-- Три картинки -->
     <goods class="main_offer">
         {% for product in new_goods %}
         <div class="">
-            <a href=""><img class="main_img" src="{{ product.image.url }}" alt={{ product.name }}></a>
-            <a href=""><p class="offers-font">{{ product.name }}<br>{{ product.price }}₽</p></a>
+            <a href="{% url "goods:product" product.slug %}"><img class="main_img" src="{{ product.image.url }}" alt={{ product.name }}></a>
+            {% if product.discount %}
+                <a href="{% url "goods:product" product.slug %}"><p class="offers-font">{{ product.name }}<br>
+                <span class='discount'>{{product.price}}₽   </span>{{ product.sell_price }}₽</span></a>
+            {% else %}
+                <a href="{% url "goods:product" product.slug %}"><p class="offers-font">{{ product.name }}<br>{{ product.sell_price }}₽</a>
+            {% endif%}
         </div>
         {% endfor%}
     </goods>
